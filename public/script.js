@@ -59,25 +59,20 @@ $(document).ready(function() {
         }
     });
 
-    /*
-    $.spin.imageBasePath = '/';
-    $.spin.interval = 0.01;
-    $.spin.timeInterval = 200;
-    $.spin.changed = function() {
+    $('#eye input').change(function(){
         var s = $(this).attr('name').split('_');
         var x = $('*[name="' + s[0] + '_x"]').val();
         var y = $('*[name="' + s[0] + '_y"]').val();
         var v = "<" + x + "," + y + ",0>";
         send(s[0], side(), v);
-    };
-    */
+    });
 
     $('#es_x').TouchSpin({ min: 0.5, max: 1.5, step: 0.01, decimals: 2, prefix: 'X' });
     $('#es_y').TouchSpin({ min: 0.5, max: 1.5, step: 0.01, decimals: 2, prefix: 'Y' });
     $('#eo_x').TouchSpin({ min: -0.5, max: 0.5, step: 0.01, decimals: 2, prefix: 'X' });
     $('#eo_y').TouchSpin({ min: -0.5, max: 0.5, step: 0.01, decimals: 2, prefix: 'Y' });
 
-    $('input[type="text"]').change(function() {
+    $('#texture input[type="text"]').change(function() {
         var s = $(this).attr('name').split('_');
         send(s[0], s[1], side(), $(this).val());
     });

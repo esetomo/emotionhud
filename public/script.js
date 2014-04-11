@@ -72,10 +72,10 @@ $(document).ready(function() {
     };
     */
 
-    $('#es_x').spinedit({ minimum: 0.5, maximum: 1.5, step: 0.01, value: 0.7, numberOfDecimals: 2 });
-    $('#es_y').spinedit({ minimum: 0.5, maximum: 1.5, step: 0.01, value: 0.6m numberOfDecimals: 2 });
-    $('#eo_x').spinedit({ minimum: -0.5, maximum: 0.5, step: 0.01, value: 0, numberOfDecimals: 2 });
-    $('#eo_y').spinedit({ minimum: -0.5, maximum: 0.5, step: 0.01, value: 0, numberOfDecimals: 2 });
+    $('#es_x').TouchSpin({ min: 0.5, max: 1.5, step: 0.01, decimals: 2, prefix: 'X' });
+    $('#es_y').TouchSpin({ min: 0.5, max: 1.5, step: 0.01, decimals: 2, prefix: 'Y' });
+    $('#eo_x').TouchSpin({ min: -0.5, max: 0.5, step: 0.01, decimals: 2, prefix: 'X' });
+    $('#eo_y').TouchSpin({ min: -0.5, max: 0.5, step: 0.01, decimals: 2, prefix: 'Y' });
 
     $('input[type="text"]').change(function() {
         var s = $(this).attr('name').split('_');

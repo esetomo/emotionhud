@@ -1,21 +1,29 @@
 <div id="eye" class="tab-pane">
-  <form>
-    <fieldset>
-      <legend>Horizontal scale:</legend>
-      <input type="text" id="es_x">
-    </fieldset>
-  </form>
+  <fieldset>
+    <legend>Scale:</legend>
+    <div class="row">
+      <div class="col-xs-6">
+        <input type="text" id="es_x" name="es_x" value="0.7">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-6">
+        <input type="text" id="es_y" name="es_y" value="0.6">
+      </div>
+    </div>
+  </fieldset>
 
-  <div class="ui-field-contain">
-    <label for="es_y">Vertical scale:</label>
-    <input type="text" id="es_y">
-  </div>
-  <div class="ui-field-contain">
-    <label for="eo_x">Horizontal offset:</label>
-    <input type="text" id="eo_x">
-  </div>
-  <div class="ui-field-contain">
-    <label for="eo_y">Vertical offset:</label>
-    <input type="text" id="eo_y">
-  </div>
+  <fieldset>
+    <legend>Offset:</legend>
+    <div class="row">
+      <div class="col-xs-6">
+        <input type="text" id="eo_x" name="eo_x" value="0">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-6">
+        <input type="text" id="eo_y" name="eo_y" value="0">    
+      </div>
+    </div>
+  </fieldset>
 </div>

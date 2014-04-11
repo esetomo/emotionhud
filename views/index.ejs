@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>api</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/jquery.minicolors/2.1.2/jquery.minicolors.css">
+    <link rel="stylesheet" href="/style.css">
+
+    <script src="//code.jquery.com/jquery-2.1.0.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdn.jsdelivr.net/jquery.minicolors/2.1.2/jquery.minicolors.js"></script>
+    <script src="/jquery-spin.js"></script>
+    <script src="/script.js"></script>
+  </head>
+  <body>
+    <input type="hidden" id="u" name="u" value="<%= u %>">
+
+    <div class="navbar navbar-default navbar-static-top" role="navigation">
+      <div class="container">
+        <a class="navbar-brand" href="#">Bra</a>
+
+        <div class="navbar-left">
+          <button id="expand" class="btn btn-default navbar-btn">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+          </button>
+        </div>
+
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#parts" data-toggle="tab">Parts</a></li>
+          <li><a href="#eye" data-toggle="tab">Eye</a></li>
+          <!-- <li><a href="#texture" data-toggle="tab">Texture</a></li> -->
+          <li><a href="#tint" data-toggle="tab">Tint</a></li>
+        </ul>
+
+        <div id="side" class="btn-group navbar-right">
+          <button class="btn btn-default navbar-btn active" value="b">Both</button>
+          <button class="btn btn-default navbar-btn" value="r">Right</button>
+          <button class="btn btn-default navbar-btn" value="l">Left</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-3">
+      </div>
+      <div class="col-xs-9">
+        <div class="tab-content">
+          <% include parts_panel %>
+          <% include eye_panel %>
+          <% include texture_panel %>
+          <% include tint_panel %>
+        </div>
+
+        <div id="command_text" class="well well-sm"></div>
+      </div>
+    </div>
+  </body>
+</html>

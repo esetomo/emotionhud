@@ -1,0 +1,44 @@
+<% 
+parts = {
+    'eb': range(1,3),
+    'el': range(1,4), 
+    'm': range(1,15) 
+};
+%>
+<div id="parts" class="tab-pane active">
+  <% for(var name in parts){ %>
+    <% shapes = parts[name] %>
+    <div class="row parts" data-part="<%= name %>">
+      <div class="col-xs-2">
+        <p>
+          <strong><%= name %></strong>
+        </p>
+      </div>
+      <div class="col-xs-10">
+        <div class="btn-toolbar" role="toolbar">
+          <div class="btn-group">
+            <% shapes.each(function(shape){ %> 
+              <% if(shape != 1 && shape % 5 == 1){ %>
+                </div></div><div class="btn-toolbar" role="toolbar"><div class="btn-group">
+              <% } %>
+              <button class="btn btn-default btn-lg" value="<%= shape %>"><%= shape %></button>
+            <% }) %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% } %>
+            
+  <div class="row parts" data-part="ea">
+    <div class="col-xs-2">
+      <p>
+        <strong>Ear</strong>
+      </p>
+    </div>
+    <div class="col-xs-10">
+      <p>
+        <button class="btn btn-default btn-lg">Ear</button>
+      </p>
+    </div>
+  </div>
+</div>

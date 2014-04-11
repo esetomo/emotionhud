@@ -1,0 +1,21 @@
+{
+  "name": "emotion_hud",
+  "version": "0.0.0",
+  "description": "Emotion HUD",
+  "main": "web.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "",
+  "author": "Ichigo Mayo",
+  "license": "MIT",
+  "dependencies": {
+    "express": "~4.0.0",
+    "ejs": ">= 0.0.1",
+    "r...e": "~0.2.0",
+    "body-parser": "~1.0.1"
+  },
+  "engines": {
+    "node": "0.10.26"
+  }
+}

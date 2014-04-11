@@ -59,6 +59,7 @@ $(document).ready(function() {
         }
     });
 
+    /*
     $.spin.imageBasePath = '/';
     $.spin.interval = 0.01;
     $.spin.timeInterval = 200;
@@ -69,11 +70,12 @@ $(document).ready(function() {
         var v = "<" + x + "," + y + ",0>";
         send(s[0], side(), v);
     };
+    */
 
-    $('*[name="es_x"]').spin({ min: 0.5, max: 1.5 });
-    $('*[name="es_y"]').spin({ min: 0.5, max: 1.5 });
-    $('*[name="eo_x"]').spin({ min: -0.5, max: 0.5 });
-    $('*[name="eo_y"]').spin({ min: -0.5, max: 0.5 });
+    $('#es_x').spinedit({ minimum: 0.5, maximum: 1.5, step: 0.01, value: 0.7, numberOfDecimals: 2 });
+    $('#es_y').spinedit({ minimum: 0.5, maximum: 1.5, step: 0.01, value: 0.6m numberOfDecimals: 2 });
+    $('#eo_x').spinedit({ minimum: -0.5, maximum: 0.5, step: 0.01, value: 0, numberOfDecimals: 2 });
+    $('#eo_y').spinedit({ minimum: -0.5, maximum: 0.5, step: 0.01, value: 0, numberOfDecimals: 2 });
 
     $('input[type="text"]').change(function() {
         var s = $(this).attr('name').split('_');

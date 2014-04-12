@@ -28,12 +28,14 @@ $(document).ready(function() {
     $('#expand').click(function(){
         var button = $(this);
 
-        if(button.hasClass('active')){
+        if(button.hasClass('expand')){
             send("expand", 0);
-            button.removeClass('active');
+            button.removeClass('expand');
+            $('#expand i').attr('class', 'fa fa-chevron-circle-right');
         }else{
             send("expand", 1);
-            button.addClass('active');
+            button.addClass('expand');
+            $('#expand i').attr('class', 'fa fa-chevron-circle-left');
         }
     });
 
@@ -64,10 +66,10 @@ $(document).ready(function() {
         send(s[0], side(), v);
     });
 
-    $('#es_x').TouchSpin({ min: 0.5, max: 1.5, step: 0.01, decimals: 2, prefix: 'X' });
-    $('#es_y').TouchSpin({ min: 0.5, max: 1.5, step: 0.01, decimals: 2, prefix: 'Y' });
-    $('#eo_x').TouchSpin({ min: -0.5, max: 0.5, step: 0.01, decimals: 2, prefix: 'X' });
-    $('#eo_y').TouchSpin({ min: -0.5, max: 0.5, step: 0.01, decimals: 2, prefix: 'Y' });
+    $('#es_x').TouchSpin({ min: 0.5, max: 1.5, step: 0.01, decimals: 2, prefix: '<i class="fa fa-arrows-h fa-fw"></i>' });
+    $('#es_y').TouchSpin({ min: 0.5, max: 1.5, step: 0.01, decimals: 2, prefix: '<i class="fa fa-arrows-v fa-fw"></i>' });
+    $('#eo_x').TouchSpin({ min: -0.5, max: 0.5, step: 0.01, decimals: 2, prefix: '<i class="fa fa-arrows-h fa-fw"></i>' });
+    $('#eo_y').TouchSpin({ min: -0.5, max: 0.5, step: 0.01, decimals: 2, prefix: '<i class="fa fa-arrows-v fa-fw"></i>' });
 
     var timer = 0;
 

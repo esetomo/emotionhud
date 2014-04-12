@@ -101,14 +101,21 @@ $(document).ready(function() {
         send('factory_reset');
     });
 
-    $('#colorpicker').colpick({
+    $('#colorpicker').spectrum({
+        theme: 'sp-custom',
+        color: '#ffffff',
         flat: true,
-        layout: 'full',
-        onSubmit: function(hsb, hex, rgb, el, bySetColor) {
-            send("ti", $('#tint .active a').attr('href').substr(1), side(), '#' + hex);
+        showInput: true,
+        showInitial: true,
+        showButtons: false,
+        preferredFormat: "hex",
+        move: function(color){
+            clearTimeout(timer);
+            timer = setTimeout(function(){
+                send("ti", $('#tint .active a').attr('href').substr(1), side(), color.toHexString());
+            }, 200);
         }
     });
 
-    // I sepcified hue bar in a image. Because the linear-gradient did not apper in the prim media.
-    $('.colpick_hue').attr('style', 'background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAACaCAIAAADn1rVeAAAAf0lEQVQoz6WL0QrDQAgEhyUEzvv/T72zhYB9SAJWkpbSh2F1HQkQmKAJekpLvX3hdOp/ExjBk43QADloXuDwdr9z73oHFgLWEMbvtDT3tPdyMyBCMAsuGGmef+AQK0sgAzX2rDRQT5n76vbUJ58tIB6IifAjJ2JcdBU/vE/Ozgsys1gUkbIISwAAAABJRU5ErkJggg==);');
+    $('.sp-input').addClass('form-control');
 });

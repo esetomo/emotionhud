@@ -36,3 +36,48 @@ body {
 #expand {
     font-size: 1.4em;
 }
+
+.sp-custom {
+    border-color: transparent;
+    background-color: transparent;
+}
+
+.sp-custom .sp-picker-container {
+    width: 340px;
+}
+
+.sp-custom .sp-input {
+    font-size: 14px !important;
+}
+
+.sp-custom .sp-choose {
+    font-weight: 400;
+    background-image: none;
+    border: 1px solid #357EBD;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857;
+    border-radius: 4px;
+    color: #FFF;
+    background-color: #4288CA;
+}
+
+.sp-custom .sp-choose:hover {
+    color: #FFF;
+    background-color: #3276B1;
+    border-color: #285E8E;
+    background-image: none;
+}
+
+.sp-custom .sp-initial {
+    border-color: #cccccc;
+}
+
+.sp-custom .sp-initial span {
+    width: 64px;
+    height: 32px;    
+}
+
+.sp-custom .sp-color, .sp-custom .sp-hue {
+    border-color: #adadad;
+}

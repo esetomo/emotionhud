@@ -97,11 +97,8 @@ $(document).ready(function() {
         }
     });
 
-    $('#reset_textures').click(function(){
-        send('te', 'eye', 'b', '85f8ebe0-22aa-50d7-6dca-8c0c99efff35',
-             'te', 'eyebrow', 'b', 'dde370dd-87e8-efcc-77d9-0f12b3141aad',
-             'te', 'eyelash', 'b', '4ab98301-4cb9-d632-ef65-fba917798bdc',
-             'te', 'skin', 'b', '1cbdd2bd-32ee-1a9a-7667-833ddecd405e');
+    $('#factory_reset').click(function(){
+        send('factory_reset');
     });
 
     $('#colorpicker').colpick({

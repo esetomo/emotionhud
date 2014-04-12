@@ -29,12 +29,13 @@
           <li><a href="#eye" data-toggle="tab"><i class="fa fa-eye fa-lg"></i></a></li>
           <li><a href="#texture" data-toggle="tab"><i class="fa fa-picture-o fa-lg"></i></a></li>
           <li><a href="#tint" data-toggle="tab"><i class="fa fa-tint fa-lg"></i></a></li>
+          <li><a href="#settings" data-toggle="tab"><i class="fa fa-gear fa-lg"></i></a></li>
         </ul>
 
         <div id="side" class="btn-group navbar-right">
-          <button class="btn btn-default btn-lg navbar-btn" value="r">R</button>
-          <button class="btn btn-default btn-lg navbar-btn active" value="b"><i class="fa fa-circle"></i></button>
-          <button class="btn btn-default btn-lg navbar-btn" value="l">L</button>
+          <button class="btn btn-default navbar-btn" value="r">R</button>
+          <button class="btn btn-default navbar-btn active" value="b"><i class="fa fa-circle"></i></button>
+          <button class="btn btn-default navbar-btn" value="l">L</button>
         </div>
       </div>
     </div>
@@ -48,6 +49,7 @@
           <% include eye_panel %>
           <% include texture_panel %>
           <% include tint_panel %>
+          <% include settings_panel %>
         </div>
 
         <div id="command_text" class="well well-sm"></div>

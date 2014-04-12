@@ -22,6 +22,9 @@ $(document).ready(function() {
         return $('#side .active').val();
     }
 
+    $.fn.bootstrapSwitch.defaults.size = 'large';
+    $("input:checkbox").bootstrapSwitch();
+
     $('#expand').click(function(){
         var button = $(this);
 
@@ -44,19 +47,13 @@ $(document).ready(function() {
         var part = button.closest('.parts');
         var part_name = part.attr('data-part');
 
-        if(part_name == "ea"){
-            if(button.hasClass('active')){
-                send(part_name, side(), 0);
-                button.removeClass('active');
-            }else{
-                send(part_name, side(), 1);
-                button.addClass('active');
-            }
-        }else{
-            send(part_name, side(), button.val());
-            part.find('button').removeClass('active');
-            button.addClass('active');
-        }
+        send(part_name, side(), button.val());
+        part.find('button').removeClass('active');
+        button.addClass('active');
+    });
+
+    $('input[name="ear"]').on('switchChange.bootstrapSwitch', function(event, state){
+        send('ea', side(), state ? 1 : 0);
     });
 
     $('#eye input').change(function(){

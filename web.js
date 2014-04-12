@@ -19,24 +19,6 @@ app.get("/", function(req, res) {
     });
 });
 
-app.post("/", function(req, res) {
-    var command = req.body.text;
-    var uri = url.parse(req.body.u);
-    var options = {
-        hostname: uri.hostname,
-        port: uri.port,
-        path: uri.path + "/",
-        method: 'POST'
-    };
-    var client_req = http.request(options);
-    client_req.on('error', function(e) {
-        console.log('problen with request: ' + e.message);
-    });
-    client_req.write(command);
-    client_req.end();
-    res.send('OK');
-});
-
 var port = Number(process.env.PORT || 5000);
 
 app.listen(port, function() {

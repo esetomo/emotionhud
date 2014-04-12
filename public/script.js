@@ -7,11 +7,8 @@ $(document).ready(function() {
         }
         $.ajax({
             type: "POST",
-            url: "/",
-            data: {
-                u: $('#u').val(),
-                text: text
-            },
+            url: $('#u').val(),
+            data: text,
             success: function() {
                 console.log('success');
             }

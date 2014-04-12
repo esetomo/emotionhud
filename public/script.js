@@ -31,11 +31,11 @@ $(document).ready(function() {
         if(button.hasClass('expand')){
             send("expand", 0);
             button.removeClass('expand');
-            $('#expand i').attr('class', 'fa fa-chevron-circle-right');
+            $('#expand i').attr('class', 'fa fa-chevron-circle-right fa-lg');
         }else{
             send("expand", 1);
             button.addClass('expand');
-            $('#expand i').attr('class', 'fa fa-chevron-circle-left');
+            $('#expand i').attr('class', 'fa fa-chevron-circle-left fa-lg');
         }
     });
 
@@ -58,27 +58,50 @@ $(document).ready(function() {
         send('ea', side(), state ? 1 : 0);
     });
 
+    $('#es_x').TouchSpin({ min: 0.5, max: 1.5, step: 0.01, decimals: 2  });
+    $('#es_y').TouchSpin({ min: 0.5, max: 1.5, step: 0.01, decimals: 2 });
+    $('#eo_x').TouchSpin({ min: -0.5, max: 0.5, step: 0.01, decimals: 2 });
+    $('#eo_y').TouchSpin({ min: -0.5, max: 0.5, step: 0.01, decimals: 2 });
+
+    var timer = 0;
+
     $('#eye input').change(function(){
         var s = $(this).attr('name').split('_');
         var x = $('*[name="' + s[0] + '_x"]').val();
         var y = $('*[name="' + s[0] + '_y"]').val();
         var v = "<" + x + "," + y + ",0>";
-        send(s[0], side(), v);
-    });
 
-    $('#es_x').TouchSpin({ min: 0.5, max: 1.5, step: 0.01, decimals: 2, prefix: '<i class="fa fa-arrows-h fa-fw"></i>' });
-    $('#es_y').TouchSpin({ min: 0.5, max: 1.5, step: 0.01, decimals: 2, prefix: '<i class="fa fa-arrows-v fa-fw"></i>' });
-    $('#eo_x').TouchSpin({ min: -0.5, max: 0.5, step: 0.01, decimals: 2, prefix: '<i class="fa fa-arrows-h fa-fw"></i>' });
-    $('#eo_y').TouchSpin({ min: -0.5, max: 0.5, step: 0.01, decimals: 2, prefix: '<i class="fa fa-arrows-v fa-fw"></i>' });
-
-    var timer = 0;
-
-    $('#texture input[type="text"]').change(function() {
         clearTimeout(timer);
         timer = setTimeout(function(){
-            var s = $(this).attr('name').split('_');
-            send(s[0], s[1], side(), $(this).val());
-        }, 500);
+            send(s[0], side(), v);
+        }, 200);
+    });
+
+    $('#texture form').submit(function(e) {
+        e.preventDefault();
+        
+        var cmd = new Array();
+
+        for(var i=0; i<e.target.length; i++){
+            var input = e.target[i];
+            if(input.value){
+                cmd.push('te');
+                cmd.push(input.name);
+                cmd.push(side());
+                cmd.push(input.value);
+            }
+        }
+
+        if(cmd.length > 0){
+            send(cmd);
+        }
+    });
+
+    $('#reset_textures').click(function(){
+        send('te', 'eye', 'b', '85f8ebe0-22aa-50d7-6dca-8c0c99efff35',
+             'te', 'eyebrow', 'b', 'dde370dd-87e8-efcc-77d9-0f12b3141aad',
+             'te', 'eyelash', 'b', '4ab98301-4cb9-d632-ef65-fba917798bdc',
+             'te', 'skin', 'b', '1cbdd2bd-32ee-1a9a-7667-833ddecd405e');
     });
 
     $('#colorpicker').colpick({

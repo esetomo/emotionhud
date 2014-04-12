@@ -1,18 +1,46 @@
 <div id="texture" class="tab-pane">
-  <fieldset>
-    <legend>texture,skin</legend>
-    <input type="text" name="texture_skin" size="32">
-  </fieldset>
-  <fieldset>
-    <legend>texture,eye</legend>
-    <input type="text" name="texture_eye" size="32">
-  </fieldset>
-  <fieldset>
-    <legend>texture,eyelash</legend>
-    <input type="text" name="texture_eyelash" size="32">
-  </fieldset>
-  <fieldset>
-    <legend>texture,eyebrow</legend>
-    <input type="text" name="texture_eyebrow" size="32">
-  </fieldset>
+  <form class="form-horizontal" role="form">
+    <div class="form-group">
+      <label class="col-xs-3"><i class="fa fa-smile-o fa-lg"></i></label>
+      <div class="col-xs-8">
+        <input class="form-control input-la" type="text" name="skin" placeholder="Asset UUID">
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label class="col-xs-3"><i class="fa fa-eye fa-lg"></i></label>
+      <div class="col-xs-8">
+        <input class="form-control input-la" type="text" name="eye" placeholder="Asset UUID">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-xs-3">Eyelash</label>
+      <div class="col-xs-8">
+        <input class="form-control input-la" type="text" name="eyelash" placeholder="Asset UUID">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-xs-3">Eyebrow</label>
+      <div class="col-xs-8">
+        <input class="form-control input-la" type="text" name="eyebrow" placeholder="Asset UUID">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-xs-3">
+      </div>
+      <div class="col-xs-6">
+        <button type="submit" class="btn btn-primary btn-lg">
+          <i class="fa fa-check fa-lg"></i>
+        </button>
+      </div>
+      <div class="col-xs-3">
+        <button id="reset_textures" type="button" class="btn btn-danger btn-lg">
+          <i class="fa fa-file-o fa-lg"></i>
+        </button>
+      </div>
+    </div>
+  </form>
 </div>

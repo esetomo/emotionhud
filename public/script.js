@@ -72,17 +72,24 @@ $(document).ready(function() {
     $('#eo_x').TouchSpin({ min: -0.5, max: 0.5, step: 0.01, decimals: 2, prefix: 'X' });
     $('#eo_y').TouchSpin({ min: -0.5, max: 0.5, step: 0.01, decimals: 2, prefix: 'Y' });
 
+    var timer = 0;
+
     $('#texture input[type="text"]').change(function() {
-        var s = $(this).attr('name').split('_');
-        send(s[0], s[1], side(), $(this).val());
+        clearTimeout(timer);
+        timer = setTimeout(function(){
+            var s = $(this).attr('name').split('_');
+            send(s[0], s[1], side(), $(this).val());
+        }, 500);
     });
 
     $('#colorpicker').colpick({
         flat: true,
         layout: 'full',
-        submit: false,
-        onChange: function(hsb, hex, rgb, el, bySetColor) {
+        onSubmit: function(hsb, hex, rgb, el, bySetColor) {
             send("ti", $('#tint .active a').attr('href').substr(1), side(), '#' + hex);
         }
     });
+
+    // I sepcified hue bar in a image. Because the linear-gradient did not apper in the prim media.
+    $('.colpick_hue').attr('style', 'background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAACaCAIAAADn1rVeAAAAf0lEQVQoz6WL0QrDQAgEhyUEzvv/T72zhYB9SAJWkpbSh2F1HQkQmKAJekpLvX3hdOp/ExjBk43QADloXuDwdr9z73oHFgLWEMbvtDT3tPdyMyBCMAsuGGmef+AQK0sgAzX2rDRQT5n76vbUJ58tIB6IifAjJ2JcdBU/vE/Ozgsys1gUkbIISwAAAABJRU5ErkJggg==);');
 });

@@ -1,3 +1,6 @@
 [submodule "public/bootstrap-touchspin"]
 	path = public/bootstrap-touchspin
 	url = https://github.com/istvan-ujjmeszaros/bootstrap-touchspin.git
+[submodule "public/colpick"]
+	path = public/colpick
+	url = https://github.com/josedvq/colpick-jQuery-Color-Picker.git

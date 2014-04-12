@@ -77,11 +77,12 @@ $(document).ready(function() {
         send(s[0], s[1], side(), $(this).val());
     });
 
-    $('#tint input').minicolors({
-        inline: true,
-        changeDelay: 200,
-        change: function(hex, opacity) {
-            send("ti", $('#tint .active a').attr('href').substr(1), side(), hex);
+    $('#colorpicker').colpick({
+        flat: true,
+        layout: 'full',
+        submit: false,
+        onChange: function(hsb, hex, rgb, el, bySetColor) {
+            send("ti", $('#tint .active a').attr('href').substr(1), side(), '#' + hex);
         }
     });
 });

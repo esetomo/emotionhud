@@ -14,7 +14,8 @@
     "ejs": ">= 0.0.1",
     "r...e": "~0.2.0",
     "body-parser": "~1.0.1",
-    "bootstrap-switch": "~3.0.0"
+    "bootstrap-switch": "~3.0.0",
+    "bounscale": "0.0.2"
   },
   "engines": {
     "node": "0.10.26"
